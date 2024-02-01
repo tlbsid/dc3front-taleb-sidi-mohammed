@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+      
+}
+
+/* Alignement du text dans le Header et Footer */ 
+header, footer {
+    text-align: center;
+    padding: 15px;
+}
+
+h1 {
+    color: green;
+}
+/* La div gallerie qui permettra d'aligner le contenu de chaque image */
+.gallerie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Flexbox des images */ 
+.img-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Jusitifier la taille de l'image et remplir  correctement la case */
+.img-container img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Effet hover et zoom de l'image lors du survol de la souris sur les images de la gallerie */ 
+.img-container:hover img {
+    transform: scale(1.1);
+}
+
+/* Texte descriptif lors du hover sur l'image */
+.img-container .img-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: black;
+    background-color: blanchedalmond;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 5px;
+}
+
+/* Le style du trait pour le texte de la desccription */
+.img-container:hover .img-description {
+    opacity: 1;
+}
+
+/* Le responsive pour Afficher 2 colonnes par ligne en écran moyen */
+@media (min-width: 601px) {
+    .img-container {
+        flex-basis: calc(50% - 10px);
+    }
+}
+
+/* Le responsive pour Afficher 2 colonnes par ligne en écran mobile */
+@media (min-width: 1025px) {
+    .img-container {
+        flex-basis: calc(25% - 10px);
+    }
+}
+
+/* Fin de page et signature avec couleur de l'arrière plan */
+footer {
+    font-size: 0.8em;
+    background-color: blanchedalmond;
+}
